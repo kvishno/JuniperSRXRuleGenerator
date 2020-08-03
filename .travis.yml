@@ -1,6 +1,13 @@
 language: csharp
 solution: SRXFWRuleGenerator.sln
+
+git:
+  depth: 10
+
 dotnet: 3.1
 mono: none
+
 script:
  - dotnet restore
+ - dotnet build --configuration Release --no-restore
+ - dotnet test --no-restore --verbosity normal
