@@ -1,5 +1,7 @@
 # JuniperSRXRuleGenerator
 
+Automates writing security policies for SRX devices.
+
 ## How to run
 Build from source
 
