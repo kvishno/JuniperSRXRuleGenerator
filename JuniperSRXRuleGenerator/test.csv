@@ -1,2 +1,2 @@
-FromZone;ToZone;Source;Destination;RuleName;Application
-Untrust;DMZ;any;WebServer01;InternetToDMZWebserver;junos-http junos-https
+FromZone,ToZone,Source,Destination,RuleName,Application
+Untrust,DMZ,any,WebServer01,InternetToDMZWebserver,junos-http junos-https

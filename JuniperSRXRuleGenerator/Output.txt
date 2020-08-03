@@ -1,0 +1,6 @@
+set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match source-address any
+set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match destination-address WebServer01
+set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match application junos-http
+set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match application junos-https
+set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver then permit
+set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver then log session-init session-close

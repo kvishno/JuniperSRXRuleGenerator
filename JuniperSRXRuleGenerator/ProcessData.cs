@@ -17,7 +17,7 @@ namespace JuniperSRXRuleGenerator
             {
                 csv.Configuration.HeaderValidated = null;
                 csv.Configuration.MissingFieldFound = null;
-                csv.Configuration.Delimiter = ";";
+                csv.Configuration.Delimiter = ",";
                 records = csv.GetRecords<Rules>().ToList();
             }
             return records;
