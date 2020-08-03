@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace JuniperSRXRuleGenerator
 {
@@ -8,7 +7,17 @@ namespace JuniperSRXRuleGenerator
     {
         static void Main(string[] args)
         {
-            List<Rules> rules = ProcessData.ReadCSV(@"rules.csv");
+            string path;
+            if (args.Length == 0)
+            {
+                path = "rules.csv";
+            }
+            else
+            {
+                path = args[0];
+            }
+
+            List<Rules> rules = ProcessData.ReadCSV(path);
 
             foreach (var item in rules)
             {
