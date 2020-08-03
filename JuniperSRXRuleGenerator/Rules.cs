@@ -5,7 +5,6 @@ using System.Text;
 using CsvHelper;
 using CsvHelper.Configuration.Attributes;
 
-
 namespace JuniperSRXRuleGenerator
 {
     class Rules

@@ -27,7 +27,6 @@ namespace JuniperSRXRuleGenerator
         public static List<string> SplitString(string s)
         {
             return s.Split(' ').ToList();
-
         }
         public static void PrintForeach(string baseline, string items, string mid)
         {
@@ -35,7 +34,6 @@ namespace JuniperSRXRuleGenerator
             foreach (var item in list)
             {
                 Console.WriteLine(baseline + mid + item);
-
             }
         }
     }
