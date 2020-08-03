@@ -1,0 +1,6 @@
+language: csharp
+solution: SRXFWRuleGenerator.sln
+dotnet: 2.1
+mono: none
+script:
+ - dotnet restore
