@@ -9,11 +9,11 @@ Untrust,DMZ,any,WebServer01,DMZWebserver,junos-http
 ```
 Output:
 ```
-set security policies from-zone Untrust to-zone DMZ policy ToWebserver match source-address any
-set security policies from-zone Untrust to-zone DMZ policy ToWebserver match destination-address WebServer01
-set security policies from-zone Untrust to-zone DMZ policy ToWebserver match application junos-http
-set security policies from-zone Untrust to-zone DMZ policy ToWebserver then permit
-set security policies from-zone Untrust to-zone DMZ policy ToWebserver then log session-init session-close
+set security policies from-zone Untrust to-zone DMZ policy DMZWebserver match source-address any
+set security policies from-zone Untrust to-zone DMZ policy DMZWebserver match destination-address WebServer01
+set security policies from-zone Untrust to-zone DMZ policy DMZWebserver match application junos-http
+set security policies from-zone Untrust to-zone DMZ policy DMZWebserver then permit
+set security policies from-zone Untrust to-zone DMZ policy DMZWebserver then log session-init session-close
 ```
 
 The following columns can take multiple values seperated by space
