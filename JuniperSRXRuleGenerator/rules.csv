@@ -1,4 +1,4 @@
 FromZone,ToZone,Source,Destination,RuleName,Application
-Untrust,DMZ,any,WebServer01,InternetToDMZWebserver,junos-http junos-https
-Trust,DMZ,any,WebServer01,TrustToDMZWebserver,junos-http junos-https
-Trust,Server,HR,HRServer,TrustToServerHRServer,junos-ssh junos-ftp
+Untrust,DMZ,any,WebServer01,SomeRule,junos-http junos-https
+Trust,DMZ,any,WebServer01,AnotherRule,junos-http junos-https
+Trust,Server,HR Finance,HRServer Rand01,ThirdRule,junos-ssh junos-ftp
