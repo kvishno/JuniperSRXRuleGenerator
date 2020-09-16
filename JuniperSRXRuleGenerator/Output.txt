@@ -1,6 +1,20 @@
-set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match source-address any
-set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match destination-address WebServer01
-set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match application junos-http
-set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver match application junos-https
-set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver then permit
-set security policies from-zone Untrust to-zone DMZ policy InternetToDMZWebserver then log session-init session-close
+set security policies from-zone Untrust to-zone DMZ policy SomeRule match source-address any
+set security policies from-zone Untrust to-zone DMZ policy SomeRule match destination-address WebServer01
+set security policies from-zone Untrust to-zone DMZ policy SomeRule match application junos-http
+set security policies from-zone Untrust to-zone DMZ policy SomeRule match application junos-https
+set security policies from-zone Untrust to-zone DMZ policy SomeRule then permit
+set security policies from-zone Untrust to-zone DMZ policy SomeRule then log session-init session-close
+set security policies from-zone Trust to-zone DMZ policy AnotherRule match source-address any
+set security policies from-zone Trust to-zone DMZ policy AnotherRule match destination-address WebServer01
+set security policies from-zone Trust to-zone DMZ policy AnotherRule match application junos-http
+set security policies from-zone Trust to-zone DMZ policy AnotherRule match application junos-https
+set security policies from-zone Trust to-zone DMZ policy AnotherRule then permit
+set security policies from-zone Trust to-zone DMZ policy AnotherRule then log session-init session-close
+set security policies from-zone Trust to-zone Server policy ThirdRule match source-address HR
+set security policies from-zone Trust to-zone Server policy ThirdRule match source-address Finance
+set security policies from-zone Trust to-zone Server policy ThirdRule match destination-address HRServer
+set security policies from-zone Trust to-zone Server policy ThirdRule match destination-address Rand01
+set security policies from-zone Trust to-zone Server policy ThirdRule match application junos-ssh
+set security policies from-zone Trust to-zone Server policy ThirdRule match application junos-ftp
+set security policies from-zone Trust to-zone Server policy ThirdRule then permit
+set security policies from-zone Trust to-zone Server policy ThirdRule then log session-init session-close

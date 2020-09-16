@@ -1,19 +1,19 @@
 # JuniperSRXRuleGenerator
 
-Automates writing security policies for SRX devices.
+Automates writing security policies in bulk for SRX devices.
 
 CSV format (Comma-delimited):
 ```
 FromZone,ToZone,Source,Destination,RuleName,Application
-Untrust,DMZ,any,WebServer01,DMZWebserver,junos-http
+Untrust,DMZ,any,WebServer01,SomeRuleName,junos-http
 ```
 Output:
 ```
-set security policies from-zone Untrust to-zone DMZ policy DMZWebserver match source-address any
-set security policies from-zone Untrust to-zone DMZ policy DMZWebserver match destination-address WebServer01
-set security policies from-zone Untrust to-zone DMZ policy DMZWebserver match application junos-http
-set security policies from-zone Untrust to-zone DMZ policy DMZWebserver then permit
-set security policies from-zone Untrust to-zone DMZ policy DMZWebserver then log session-init session-close
+set security policies from-zone Untrust to-zone DMZ policy SomeRuleName match source-address any
+set security policies from-zone Untrust to-zone DMZ policy SomeRuleName match destination-address WebServer01
+set security policies from-zone Untrust to-zone DMZ policy SomeRuleName match application junos-http
+set security policies from-zone Untrust to-zone DMZ policy SomeRuleName then permit
+set security policies from-zone Untrust to-zone DMZ policy SomeRuleName then log session-init session-close
 ```
 
 The following columns can take multiple values seperated by space
@@ -39,6 +39,8 @@ set security policies from-zone DMZ to-zone Server policy SomeRuleName match app
 set security policies from-zone DMZ to-zone Server policy SomeRuleName then permit
 set security policies from-zone DMZ to-zone Server policy SomeRuleName then log session-init session-close
 ```
+
+Another example can be found here [rules.csv](https://github.com/kvishno/JuniperSRXRuleGenerator/blob/master/JuniperSRXRuleGenerator/rules.csv) - [output](https://github.com/kvishno/JuniperSRXRuleGenerator/blob/master/JuniperSRXRuleGenerator/Output.txt)
 
 ## How to run
 Build from source (.NET Core 3.1)
